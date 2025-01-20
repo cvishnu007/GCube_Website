@@ -1,6 +1,6 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Whatsapp, Instagram , Discord, Disc} from 'react-bootstrap-icons'; // Import specific icons
+import { Envelope, Instagram , Discord, Linkedin} from 'react-bootstrap-icons'; // Import specific icons
 
 const Footer = () => {
   return (
@@ -31,10 +31,10 @@ const Footer = () => {
                 <a href="/about" className="text-light text-decoration-none">About</a>
               </li>
               <li>
-                <a href="#" className="text-light text-decoration-none">Games</a>
+                <a href="/games" className="text-light text-decoration-none">Games</a>
               </li>
               <li>
-                <a href="#" className="text-light text-decoration-none">Contact</a>
+                <a href="/contact" className="text-light text-decoration-none">Contact</a>
               </li>
             </ul>
           </div>
@@ -43,15 +43,18 @@ const Footer = () => {
           <div className="col-md-4 blue1">
             <h5>Follow Us</h5>
             <div>
-              <a href="#" className="text-light me-3 icon">
-                <Whatsapp size={24} /> {/* WhatsApp icon */}
+              <a href="/contact" className="text-light me-3 icon">
+                <Envelope size={24} /> 
+              </a>
+              <a href="https://www.instagram.com/g_cube.pesu?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target='_blank' className="text-light me-3 icon">
+                <Instagram size={24} /> 
               </a>
               <a href="#" className="text-light me-3 icon">
-                <Instagram size={24} /> {/* Instagram icon */}
+                <Discord size={24} /> 
               </a>
-              <a href="#" className="text-light me-3 icon">
-                <Discord size={24} /> {/* Instagram icon */}
-              </a>
+              {/* <a href="#" className="text-light me-3 icon">
+                <Linkedin size={24} /> 
+              </a> */}
             </div>
           </div>
         </div>

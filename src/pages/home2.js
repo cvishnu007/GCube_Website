@@ -15,7 +15,6 @@ const Home2 = () => {
   const textAreaRef2 = useRef(null);
   const faqRef = useRef(null);
 
-
   useEffect(() => {
     const timeout = setTimeout(() => {
       setFadeIn(true);
@@ -65,6 +64,7 @@ const Home2 = () => {
     };
   }, []);
 
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -88,7 +88,7 @@ const Home2 = () => {
 
   return (
     <div style={{ 
-      minHeight: '380vh', 
+      height: '380vh', 
       backgroundImage: `url(${backgroundImage})`, // Set the background image
       backgroundSize: 'cover', // Ensure the background covers the entire container
       backgroundPosition: 'center', // Center the background image
@@ -97,6 +97,7 @@ const Home2 = () => {
       <div style={{ position: 'sticky', top: 0, zIndex: 100 }}>
         <NavigationBar username="JohnDoe" />
       </div>
+      <div>
       <div style={{ position: 'relative', height: '100vh', width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: "5px"}}>
         <img
           src={logoImage}
@@ -122,6 +123,12 @@ const Home2 = () => {
               textShadow: '0 0 10px rgba(0, 0, 0, 0.5)',
               opacity: fadeIn ? 1 : 0,
               transition: 'opacity 1s ease-in-out',
+              '@media (max-width: 767px)': {
+                fontSize: '8vw',
+              },
+              '@media (min-width: 768px) and (max-width: 1199px)': {
+                fontSize: '9vw',
+              },
             }}
           >
             GCUBE
@@ -136,70 +143,106 @@ const Home2 = () => {
               transition: 'opacity 1s ease-in-out',
               color: 'rgb(44, 211, 211)',
               marginTop: '0px',
+              '@media (max-width: 767px)': {
+                fontSize: '1.5vw',
+              },
+              '@media (min-width: 768px) and (max-width: 1199px)': {
+                fontSize: '1.8vw',
+              },
             }}
           >
             Get. Game. Going.
           </p>
         </div>
-        <div
-          ref={textAreaRef}
-          style={{
-            position: 'absolute',
-            top: '110%',
-            marginTop: '5px',
-            height: '60vh',
-            width: '100%',
-            display: 'flex',
-            alignItems: 'center',
-            backgroundColor: 'rgba(62, 62, 62, 0.7 )', // Background color
-            padding: '7px',
-            opacity: fadeInTextArea ? 1 : 0, // Fade-in effect
-            transform: fadeInTextArea ? 'translateY(0)' : 'translateY(20px)', // Smooth translate effect
-            transition: 'opacity 1s ease-in-out, transform 1s ease-in-out', // Transition for both properties
-          }}
-        >
-          <img
-            src={textImage}
-            alt="Text Image"
-            style={{
-              width: 'auto',
-              height: '80%',
-              borderRadius: '10px',
-            }}
-          />
-          <div style={{ width: '100%', marginLeft: '20px' }}>
-            <h2
-              style={{
-                fontFamily: 'Oswald',
-                fontSize: '4.8vw',
-                fontWeight: 'bolder',
-                marginBottom: '10px',
-                color: 'rgb(44, 211, 211)',
-              }}
-            >
-              Game Development Club Of <b>PES</b>
-            </h2>
-            <p
-              style={{
-                fontFamily: 'Domine',
-                fontSize: '1.5vw',
-                fontWeight: 'lighter',
-                color: 'whitesmoke',
-              }}
-            >
-              <em1>G³</em1> is open to anyone passionate about game development, regardless of background or
-              experience level. Whether your interests lie in animation, game design, art, sfx or voice
-              acting, we have a place for everyone. We are committed to providing everyone equal
-              opportunities and guidance for all things game development.
-            </p>
-          </div>
         </div>
-<div
-  ref={textAreaRef2} // New ref for the second text area
-  style={{
-    position: 'absolute',
-    top: '190%', // Position it below the previous section
 
+
+
+<div
+  ref={textAreaRef}
+  style={{
+    position: 'relative',
+    // top: '110%',
+    marginTop: '5px',
+    height: 'auto', // Adjust height as needed
+    width: '100%',
+    display: 'flex',
+    flexDirection: 'row', // Stack elements horizontally
+    justifyContent: 'center', // Center content horizontally
+    alignItems: 'center', // Center content vertically
+    padding: '20px', // Add some padding
+    backgroundColor: 'rgba(255, 255, 255, 0.1)', // Add a background color
+    borderRadius: '10px', // Add a border radius
+    opacity: fadeInTextArea ? 1 : 0, // Fade-in effect
+    transform: fadeInTextArea ? 'translateY(0)' : 'translateY(20px)', // Smooth translate effect
+    transition: 'opacity 1s ease-in-out, transform 1s ease-in-out', // Transition for both properties
+    '@media (max-width: 767px)': {
+      top: '160%',
+      flexDirection: 'column', // Stack elements vertically on smaller devices
+    },
+    '@media (min-width: 768px) and (max-width: 1199px)': {
+      top: '180%',
+    },
+  }}
+>
+  <img
+    src={textImage}
+    alt="Text Image"
+    style={{
+      width: '40%', // Make the image fit the screen
+      height: 'auto', // Adjust height as needed
+      borderRadius: '10px',
+      border: '1px solid #ccc', // Add a border
+      boxShadow: '0 4px 15px rgba(0, 0, 0, 0.3)', // Add a box shadow to the image
+      '@media (max-width: 767px)': {
+        width: '100%', // Make the image fit the screen on smaller devices
+      },
+    }}
+  />
+  <div style={{ width: '60%', marginLeft: '20px' }}>
+    <h2
+      style={{
+        fontFamily: 'Oswald',
+        fontSize: '4.8vw',
+        fontWeight: 'bolder',
+        marginBottom: '10px',
+        color: 'rgb(44, 211, 211)',
+        '@media (max-width: 767px)': {
+          fontSize: '3.5vw',
+        },
+        '@media (min-width: 768px) and (max-width: 1199px)': {
+          fontSize: '4vw',
+        },
+      }}
+    >
+      Game Development Club Of <b>PES</b>
+    </h2>
+    <p
+      style={{
+        fontFamily: 'Domine',
+        fontSize: '1.5vw',
+        fontWeight: 'lighter',
+        color: 'whitesmoke',
+        '@media (max-width: 767px)': {
+          fontSize: '1vw',
+        },
+        '@media (min-width: 768px) and (max-width: 1199px)': {
+          fontSize: '1.2vw',
+        },
+      }}
+    >
+      <em1>G³</em1> is a community-driven club dedicated to bringing together passionate game developers and artists. We aim to foster creativity, collaboration, and skill development by providing a platform for members to explore all facets of game creation. Through hands-on projects, game jams, and industry engagement, <em1>G³</em1>  empowers its members to grow, connect, and turn their ideas into reality.
+    </p>
+  </div>
+</div>
+
+
+<div
+  ref={textAreaRef2}
+  style={{
+    position: 'relative',
+    // top: '200%', // Position it below the previous section
+    marginTop: '7rem ',
     height: 'auto', // Adjust height as needed
     width: '100%',
     display: 'flex',
@@ -210,6 +253,12 @@ const Home2 = () => {
     opacity: fadeInTextArea2 ? 1 : 0, // Fade-in effect for the second div
     transform: fadeInTextArea2 ? 'translateY(0)' : 'translateY(20px)', // Smooth translate effect
     transition: 'opacity 1s ease-in-out, transform 1s ease-in-out', // Transition for both properties
+    '@media (max-width: 767px)': {
+      top: '160%',
+    },
+    '@media (min-width: 768px) and (max-width: 1199px)': {
+      top: '170%',
+    },
   }}
 >
   <h2
@@ -220,101 +269,30 @@ const Home2 = () => {
       color: 'rgb(44, 211, 211)',
       textAlign: 'center', // Center the text
       marginBottom: '10vh',
+      '@media (max-width: 767px)': {
+        fontSize: '3vw',
+      },
+      '@media (min-width: 768px) and (max-width: 1199px)': {
+        fontSize: '3.5vw',
+      },
     }}
   >
     {/* <em1>Who Are We Looking For?</em1> */}
     Who Are We Looking For?
   </h2>
   <Carousel/>
-  {/* <div className="row">
-    <div className="col-md-4">
-      <div
-        style={{
-          backgroundColor: 'rgba(0, 0, 0, 0.7)', // Black translucent background
-          padding: '7px',
-          boxShadow: '0 4px 15px rgba(0, 0, 0, 0.3)', // Add box shadow
-        }}
-      >
-        <div className="card mb-4 shadow-sm" style={{ backgroundColor: 'transparent' }}>
-          <img src="https://picsum.photos/200/150" alt="Image 1" className="card-img-top" style={{ height: '300px', objectFit: 'cover' }} />
-          <div className="card-body" style={{ backgroundColor: 'transparent', color: 'whitesmoke' }}>
-            <h5 className="blue1" style={{textAlign: 'center', font: 'Bold', fontSize: '2rem', fontFamily:'Oswald'}}>Leaders</h5>
-            <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <div className="d-flex justify-content-center align-items-center">
-              <button type="button" className="btn btn-lg btn-outline-secondary" style={{ margin: 'auto' }}>Join Now</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div className="col-md-4">
-      <div
-        style={{
-          backgroundColor: 'rgba(0, 0, 0, 0.7)', // Black translucent background
-          padding: '7px',
-          boxShadow: '0 4px 15px rgba(0 , 0, 0.3)', // Add box shadow
-        }}
-      >
-        <div className="card mb-4 shadow-sm" style={{ backgroundColor: 'transparent' }}>
-          <img src="https://picsum.photos/200/150" alt="Image 2" className="card-img-top" style={{ height: '300px', objectFit: 'cover' }} />
-          <div className="card-body" style={{ backgroundColor: 'transparent', color: 'whitesmoke' }}>
-            <h5 className="blue1" style={{textAlign: 'center', font: 'Bold', fontSize: '2rem', fontFamily:'Oswald'}}>Innovators</h5>
-            <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <div className="d-flex justify-content-center align-items-center">
-              <button type="button" className="btn btn-lg btn-outline-secondary" style={{ margin: 'auto' }}>Join Now</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div className="col-md-4">
-      <div
-        style={{
-          backgroundColor: 'rgba(0, 0, 0, 0.7)', // Black translucent background
-          padding: '7px',
-          boxShadow: '0 4px 15px rgba(0, 0, 0, 0.3)', // Add box shadow
-        }}
-      >
-        <div className="card mb-4 shadow-sm" style={{ backgroundColor: 'transparent' }}>
-          <img src="https://picsum.photos/200/150" alt="Image 3" className="card-img-top" style={{ height: '300px', objectFit: 'cover' }} />
-          <div className="card-body" style={{ backgroundColor: 'transparent', color: 'whitesmoke' }}>
-            <h5 className="blue1" style={{textAlign: 'center', font: 'Bold', fontSize: '2rem', fontFamily:'Oswald'}}>Coders</h5>
-            <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <div className="d-flex justify-content-center align-items-center">
-              <button type="button" className="btn btn-lg btn-outline-secondary" style={{ margin: 'auto' }}>Join Now</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    {/* <div className="col-md-3">
-      <div
-        style={{
-          backgroundColor: 'rgba(0, 0, 0, 0.7)', // Black translucent background
-          padding: '7px',
-          boxShadow: '0 4px 15px rgba(0, 0, 0, 0.3)', // Add box shadow
-        }}
-      >
-        <div className="card mb-4 shadow-sm" style={{ backgroundColor: 'transparent' }}>
-          <img src="https://picsum.photos/200/150" alt="Image 4" className="card-img-top" style={{ height: '300px', objectFit: 'cover' }} />
-          <div className="card-body" style={{ backgroundColor: 'transparent', color: 'whitesmoke' }}>
-            <h5 className="blue1" style={{textAlign: 'center', font: 'Bold', fontSize: '2rem', fontFamily:'Oswald'}}>Designers</h5>
-            <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <div className="d-flex justify-content-center align-items-center">
-              <button type="button" className="btn btn-lg btn-outline-secondary" style={{ margin: 'auto' }}>Join Now</button>
-            </div>
-          </div>
-        </div>
-      </div>
-          </div> 
-        </div> */}
-      </div>
-      <div
+</div>
+
+
+
+
+
+<div
   ref={faqRef} // New ref for the second text area
   style={{
-    position: 'absolute',
-    top: '290%', // Position it below the previous section
-    marginTop: '5px',
+    position: 'relative',
+    // top: '290%', // Position it below the previous section
+    marginTop: '5rem ',
     height: 'auto', // Adjust height as needed
     width: '100%',
     display: 'flex',
@@ -325,39 +303,56 @@ const Home2 = () => {
     opacity: fadeInFAQ ? 1 : 0, // Fade-in effect for the FAQ section
     transform: fadeInFAQ ? 'translateY(0)' : 'translateY(20px)', // Smooth translate effect
     transition: 'opacity 1s ease-in-out, transform 1s ease-in-out', // Transition for both properties
-  }}>
-  {/* FAQ Section */}
-  <div
+    '@media (max-width: 767px)': {
+      top: '240%',
+    },
+    '@media (min-width: 768px) and (max-width: 1199px)': {
+      top: '260%',
+    },
+  }}
+>
+<div
+  style={{
+    position: 'absolute',
+    top: '20%', // Position it below the cards
+    width: '100%',
+    display: 'flex',
+    flexDirection: 'column', // Stack elements vertically
+    justifyContent: 'center', // Center content horizontally
+    alignItems: 'center', // Center content vertically
+    padding: '7px',
+    '@media (max-width: 767px)': {
+      top: '15%',
+    },
+    '@media (min-width: 768px) and (max-width: 1199px)': {
+      top: '18%',
+    },
+  }}
+>
+  <h2
     style={{
-      position: 'absolute',
-      top: '20%', // Position it below the cards
-      width: '100%',
-      display: 'flex',
-      flexDirection: 'column', // Stack elements vertically
-      justifyContent: 'center', // Center content horizontally
-      alignItems: 'center', // Center content vertically
-      padding: '7px',
+      fontFamily: 'Zen Dots',
+      fontSize: '4vw',
+      fontWeight: 'bolder',
+      color: 'rgb(44, 211, 211)',
+      // textAlign: 'left', // Center the text
+      marginBottom: '1rem',
+      '@media (max-width: 767px)': {
+        fontSize: '3.5vw',
+      },
+      '@media (min-width: 768px) and (max-width: 1199px)': {
+        fontSize: '3.5vw',
+      },
     }}
+    // className='icon2'
   >
-    <h2
-      style={{
-        fontFamily: 'Zen Dots',
-        fontSize: '4vw',
-        fontWeight: 'bolder',
-        color: 'rgb(44, 211, 211)',
-        // textAlign: 'left', // Center the text
-        marginBottom: '50px',
-
-      }}
-      // className='icon2'
-    >
-      {/* <em1>FAQs</em1> */}
-      FAQs
-    </h2>
-    <FAQs />
-  </div>
+    {/* <em1>FAQs</em1> */}
+    FAQs
+  </h2>
+  <FAQs />
 </div>
-    </div>
+        </div>
+      </div>
     </div>
   );
 };

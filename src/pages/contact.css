@@ -1,0 +1,50 @@
+.contact-form-card {
+    background-color: #2a2e35;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .contact-form-card .card-body {
+    padding: 20px;
+  }
+  
+  .contact-form-card .card-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .contact-form-card .form-label {
+    font-size: 16px;
+    color: #fff;
+  }
+  
+  .contact-form-card .form-control {
+    background-color: #2a2e35;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    color: #fff;
+  }
+  
+  .contact-form-card .form-control:focus {
+    border-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .contact-form-card .btn {
+    background-color: rgb(189, 38, 111);
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    color: #fff;
+  }
+  
+  .contact-form-card .btn:hover {
+    background-color: rgb(189, 38, 111);
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    color: #fff;
+  }

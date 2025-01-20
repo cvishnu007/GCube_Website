@@ -1,6 +1,7 @@
 import React from 'react';
 import { Container, Row, Col, Image, Card } from 'react-bootstrap';
 import NavigationBar from '../components/navbar';
+import './about.css'
 
 const About = () => {
   return (
@@ -17,19 +18,24 @@ const About = () => {
                 color: 'rgb(44, 211, 211)',
                 fontWeight: 'bolder',
                 fontSize: '4rem',
-                textShadow: '0 0 10px black'
-              }}>About Us</h1>
-            <p className="lead text-white">Welcome to <em1>GCUBE</em1>, the Game Development Club of PES.</p>
+                textShadow: '0 0 10px black',
+                marginBottom: '2rem'
+              }}><div>Welcome to <em1>GCUBE</em1></div>
+              <div style={{fontSize: '3rem',}}>The Game Development Club of PES</div></h1> 
+            {/* <p className="lead text-white">Welcome to <em1>GCUBE</em1>, the Game Development Club of PES.</p> */}
           </Col>
         </Row>
         <Row className="justify-content-center">
           <Col md={8}>
-            <p className="text-white">
+          <p className='text-white'>
+          At <em1>G³</em1>, we believe in the power of collaboration and creativity to shape the future of game development. Our mission is to unite passionate developers, designers, and artists in a supportive community where they can hone their skills, share ideas, and build innovative games together.
+          </p>
+            {/* <p className="text-white">
               <em1>GCUBE</em1> is a community of passionate game developers, designers, and artists who come together to create innovative and engaging games. Our mission is to provide a platform for like-minded individuals to collaborate, learn, and grow in the field of game development.
             </p>
             <p className="text-white">
               We believe that game development is not just about creating games, but about telling stories, evoking emotions, and bringing people together. Our team is dedicated to creating games that are not only fun and challenging but also thought-provoking and visually stunning.
-            </p>
+            </p> */}
           </Col>
         </Row>
         <Row className="justify-content-center mt-5">
@@ -39,7 +45,7 @@ const About = () => {
             <Row className="g-4">
               {/* Team Member 1 */}
               <Col md={6}>
-                <Card style={{ backgroundColor: '#2a2e35', border: 'none' }}>
+                <Card className="team-member-card" style={{ backgroundColor: '#2a2e35', border: 'none' }}>
                   <Row className="g-0">
                     <Col md={4}>
                       <Image src="https://picsum.photos/200/300" alt="Team Member 1" fluid className="rounded-start" />
@@ -57,7 +63,7 @@ const About = () => {
               </Col>
               {/* Team Member 2 */}
               <Col md={6}>
-                <Card style={{ backgroundColor: '#2a2e35', border: 'none' }}>
+                <Card className="team-member-card" style={{ backgroundColor: '#2a2e35', border: 'none' }}>
                   <Row className="g-0">
                     <Col md={4}>
                       <Image src="https://picsum.photos/200/301" alt="Team Member 2" fluid className="rounded-start" />
@@ -75,7 +81,7 @@ const About = () => {
               </Col>
               {/* Team Member 3 */}
               <Col md={6}>
-                <Card style={{ backgroundColor: '#2a2e35', border: 'none' }}>
+                <Card className="team-member-card" style={{ backgroundColor: '#2a2e35', border: 'none' }}>
                   <Row className="g-0">
                     <Col md={4}>
                       <Image src="https://picsum.photos/200/302" alt="Team Member 3" fluid className="rounded-start" />
@@ -93,10 +99,10 @@ const About = () => {
               </Col>
               {/* Team Member 4 */}
               <Col md={6}>
-                <Card style={{ backgroundColor: '#2a2e35', border: 'none' }}>
+                <Card className="team-member-card" style={{ backgroundColor: '#2a2e35', border: 'none' }}>
                   <Row className="g-0">
                     <Col md={4}>
-                      <Image src ="https://picsum.photos/200/303" alt="Team Member 4" fluid className="rounded-start" />
+                      <Image src="https://picsum.photos/200/303" alt="Team Member 4" fluid className="rounded-start" />
                     </Col>
                     <Col md={8}>
                       <Card.Body>
@@ -111,7 +117,7 @@ const About = () => {
               </Col>
               {/* Team Member 5 */}
               <Col md={6}>
-                <Card style={{ backgroundColor: '#2a2e35', border: 'none' }}>
+                <Card className="team-member-card" style={{ backgroundColor: '#2a2e35', border: 'none' }}>
                   <Row className="g-0">
                     <Col md={4}>
                       <Image src="https://picsum.photos/200/304" alt="Team Member 5" fluid className="rounded-start" />

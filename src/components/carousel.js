@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Carousel, Card, Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -42,6 +42,24 @@ const Home2 = () => {
     },
   ];
 
+  const [cardsPerSlide, setCardsPerSlide] = useState(3);
+
+  // Update cardsPerSlide based on screen width
+  useEffect(() => {
+    const updateCardsPerSlide = () => {
+      if (window.innerWidth < 768) {
+        setCardsPerSlide(1); // Small screens: 1 card
+      } else {
+        setCardsPerSlide(3); // Larger screens: up to 3 cards
+      }
+    };
+
+    updateCardsPerSlide(); // Set initial value
+    window.addEventListener('resize', updateCardsPerSlide); // Update on resize
+    return () => window.removeEventListener('resize', updateCardsPerSlide);
+  }, []);
+
+  // Chunk cards into groups based on cardsPerSlide
   const chunkCards = (arr, size) => {
     const chunks = [];
     for (let i = 0; i < arr.length; i += size) {
@@ -50,20 +68,51 @@ const Home2 = () => {
     return chunks;
   };
 
-  const cardGroups = chunkCards(cards, 3); // Group cards into chunks of 3
+  const cardGroups = chunkCards(cards, cardsPerSlide);
 
   return (
     <div className="container">
-      <Carousel controls={true} indicators={false} interval={1000}>
+      <style>
+        {`
+          .carousel-media {
+            height: 300px;
+            object-fit: cover;
+          }
+
+          @media (max-width: 576px) {
+            .carousel-media {
+              height: 200px;
+            }
+          }
+
+          @media (max-width: 768px) {
+            .carousel-media {
+              height: 250px;
+            }
+          }
+
+          @media (max-width: 992px) {
+            .carousel-media {
+              height: 280px;
+            }
+          }
+
+          @media (max-width: 1200px) {
+            .carousel-media {
+              height: 300px;
+            }
+          }
+        `}
+      </style>
+      <Carousel controls={true} indicators={false} interval={3000}>
         {cardGroups.map((group, index) => (
           <Carousel.Item key={index}>
-            <div className="row">
+            <div className="row justify-content-center">
               {group.map((card, idx) => (
-                <div className="col-md-4 px-2" key={idx}>
+                <div className={`col-${12 / cardsPerSlide} px-2`} key={idx}>
                   <Card
                     className="mx-0"
                     style={{
-                      width: '25rem',
                       backgroundColor: 'rgba(0, 0, 0, 0.7)',
                       boxShadow: '0 4px 15px rgba(0, 0, 0, 0.3)',
                       marginBottom: '15px',
@@ -73,23 +122,18 @@ const Home2 = () => {
                     <Card.Img
                       variant="top"
                       src={card.image}
-                      style={{
-                        height: '300px',
-                        objectFit: 'cover',
-                      }}
+                      className="img-fluid carousel-media"
                     />
                     <Card.Body>
                       <Card.Title
-                        style={{ textAlign: 'center', fontFamily: 'Oswald', fontSize: '2rem',}}
-                        className='custom-title'
+                        style={{ textAlign: 'center', fontFamily: 'Oswald', fontSize: '2rem' }}
                       >
                         {card.title}
                       </Card.Title>
                       <Card.Text>{card.content}</Card.Text>
-                      <div className="d-flex justify-content-center ">
+                      <div className="d-flex justify-content-center">
                         <Button
                           variant="outline-secondary"
-                          className="btn-lg icon2"
                           style={{
                             backgroundColor: 'rgb(123, 16, 68)',
                             color: 'whitesmoke',
@@ -100,6 +144,7 @@ const Home2 = () => {
                             fontFamily: 'Oswald',
                             fontSize: '1rem',
                           }}
+                          className='icon2'
                         >
                           {card.buttonText}
                         </Button>
@@ -117,6 +162,9 @@ const Home2 = () => {
 };
 
 export default Home2;
+
+
+//Comment code 2
 
 // import React, { useState } from 'react';
 // import { Card, Button } from 'react-bootstrap';
@@ -228,3 +276,90 @@ export default Home2;
 // };
 
 // export default Home2;
+
+
+//Comment Code 3
+
+
+{/* <div className="row">
+    <div className="col-md-4">
+      <div
+        style={{
+          backgroundColor: 'rgba(0, 0, 0, 0.7)', // Black translucent background
+          padding: '7px',
+          boxShadow: '0 4px 15px rgba(0, 0, 0, 0.3)', // Add box shadow
+        }}
+      >
+        <div className="card mb-4 shadow-sm" style={{ backgroundColor: 'transparent' }}>
+          <img src="https://picsum.photos/200/150" alt="Image 1" className="card-img-top" style={{ height: '300px', objectFit: 'cover' }} />
+          <div className="card-body" style={{ backgroundColor: 'transparent', color: 'whitesmoke' }}>
+            <h5 className="blue1" style={{textAlign: 'center', font: 'Bold', fontSize: '2rem', fontFamily:'Oswald'}}>Leaders</h5>
+            <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <div className="d-flex justify-content-center align-items-center">
+              <button type="button" className="btn btn-lg btn-outline-secondary" style={{ margin: 'auto' }}>Join Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div className="col-md-4">
+      <div
+        style={{
+          backgroundColor: 'rgba(0, 0, 0, 0.7)', // Black translucent background
+          padding: '7px',
+          boxShadow: '0 4px 15px rgba(0 , 0, 0.3)', // Add box shadow
+        }}
+      >
+        <div className="card mb-4 shadow-sm" style={{ backgroundColor: 'transparent' }}>
+          <img src="https://picsum.photos/200/150" alt="Image 2" className="card-img-top" style={{ height: '300px', objectFit: 'cover' }} />
+          <div className="card-body" style={{ backgroundColor: 'transparent', color: 'whitesmoke' }}>
+            <h5 className="blue1" style={{textAlign: 'center', font: 'Bold', fontSize: '2rem', fontFamily:'Oswald'}}>Innovators</h5>
+            <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <div className="d-flex justify-content-center align-items-center">
+              <button type="button" className="btn btn-lg btn-outline-secondary" style={{ margin: 'auto' }}>Join Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div className="col-md-4">
+      <div
+        style={{
+          backgroundColor: 'rgba(0, 0, 0, 0.7)', // Black translucent background
+          padding: '7px',
+          boxShadow: '0 4px 15px rgba(0, 0, 0, 0.3)', // Add box shadow
+        }}
+      >
+        <div className="card mb-4 shadow-sm" style={{ backgroundColor: 'transparent' }}>
+          <img src="https://picsum.photos/200/150" alt="Image 3" className="card-img-top" style={{ height: '300px', objectFit: 'cover' }} />
+          <div className="card-body" style={{ backgroundColor: 'transparent', color: 'whitesmoke' }}>
+            <h5 className="blue1" style={{textAlign: 'center', font: 'Bold', fontSize: '2rem', fontFamily:'Oswald'}}>Coders</h5>
+            <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <div className="d-flex justify-content-center align-items-center">
+              <button type="button" className="btn btn-lg btn-outline-secondary" style={{ margin: 'auto' }}>Join Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {/* <div className="col-md-3">
+      <div
+        style={{
+          backgroundColor: 'rgba(0, 0, 0, 0.7)', // Black translucent background
+          padding: '7px',
+          boxShadow: '0 4px 15px rgba(0, 0, 0, 0.3)', // Add box shadow
+        }}
+      >
+        <div className="card mb-4 shadow-sm" style={{ backgroundColor: 'transparent' }}>
+          <img src="https://picsum.photos/200/150" alt="Image 4" className="card-img-top" style={{ height: '300px', objectFit: 'cover' }} />
+          <div className="card-body" style={{ backgroundColor: 'transparent', color: 'whitesmoke' }}>
+            <h5 className="blue1" style={{textAlign: 'center', font: 'Bold', fontSize: '2rem', fontFamily:'Oswald'}}>Designers</h5>
+            <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <div className="d-flex justify-content-center align-items-center">
+              <button type="button" className="btn btn-lg btn-outline-secondary" style={{ margin: 'auto' }}>Join Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+          </div> 
+        </div> */}

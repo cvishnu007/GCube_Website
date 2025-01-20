@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const FAQ = () => {
@@ -16,6 +16,9 @@ const FAQ = () => {
       answer: 'An accordion is a collapsible component that allows you to hide and show content in a compact manner. It is commonly used in FAQs to display questions and answers.'
     }
   ];
+
+  // State variable to keep track of the currently open accordion item
+  const [activeIndex, setActiveIndex] = useState(0);
 
   // Inline styles for the FAQ title
   const faqTitleStyle = {
@@ -64,16 +67,17 @@ const FAQ = () => {
                 type="button"
                 data-bs-toggle="collapse"
                 data-bs-target={`#collapse${index}`}
-                aria-expanded={index === 0 ? 'true' : 'false'}
+                aria-expanded={index === activeIndex ? 'true' : 'false'}
                 aria-controls={`collapse${index}`}
                 style={{ ...accordionButtonStyle, ...accordionHeaderStyle }} // Combine button and header styles
+                onClick={() => setActiveIndex(index)} // Update the active index on click
               >
                 {faq.question}
               </button>
             </h2>
             <div
               id={`collapse${index}`}
-              className={`accordion-collapse collapse ${index === 0 ? 'show' : ''}`}
+              className={`accordion-collapse collapse ${index === activeIndex ? 'show' : ''}`}
               aria-labelledby={`heading${index}`}
             >
               <div className="accordion-body" style={accordionBodyStyle}> {/* Apply inline styles to the body */}
