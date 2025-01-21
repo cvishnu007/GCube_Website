@@ -65,9 +65,15 @@ const Home2 = () => {
       buttonText: 'Join Now',
     },
     {
+      title: 'Technical',
+      content: `From scratch to Unreal Engine, we cover everything in game development. Dive into coding, design, and innovation—anything and everything, all in one place!`,
+      image: 'https://images.pexels.com/photos/1089438/pexels-photo-1089438.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+      buttonText: 'Join Now',
+    },
+    {
       title: 'Campainging',
       content: 'Create engaging content for a PR campaign, focus on event details and audience engagement to drive excitement and action.',
-      image: 'https://images.pexels.com/photos/1464223/pexels-photo-1464223.jpeg',
+      image: 'https://images.pexels.com/photos/5935743/pexels-photo-5935743.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
       buttonText: 'Join Now',
     },
   ];

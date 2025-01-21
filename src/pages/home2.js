@@ -123,11 +123,12 @@ const Home2 = () => {
               color: 'whitesmoke',
               textShadow: '0 0 10px rgba(0, 0, 0, 0.5)',
               opacity: fadeIn ? 1 : 0,
-              transition: 'opacity 1s ease-in-out',
+              transition: 'opacity 1.5s ease-in-out',
             }}
             className='home-header1'
           >
-            <em>GCUBE</em>
+            {/* <em>GCUBE</em> */}
+            GCUBE
           </h1>
           <p
             style={{
