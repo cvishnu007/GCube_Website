@@ -73,7 +73,7 @@ const Home2 = () => {
     {
       title: 'Campainging',
       content: 'Create engaging content for a PR campaign, focus on event details and audience engagement to drive excitement and action.',
-      image: 'https://images.pexels.com/photos/5935743/pexels-photo-5935743.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+      image: 'https://images.pexels.com/photos/5638273/pexels-photo-5638273.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
       buttonText: 'Join Now',
     },
   ];

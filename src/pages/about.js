@@ -75,7 +75,7 @@ const About = () => {
                     </Col>
                     <Col md={8}>
                       <Card.Body>
-                        <Card.Title style={{ color: 'rgb(189, 38, 111)', fontSize: '1.5rem', fontWeight: 'bold' }}>Vajra DindaKurthi</Card.Title>
+                        <Card.Title style={{ color: 'rgb(189, 38, 111)', fontSize: '1.5rem', fontWeight: 'bold' }}>Vajra Dindakurthi</Card.Title>
                         <Card.Text className="text-white">
                             Programmer with a passion for Mathematical Designs in games . Enjoys solving complex puzzles
                         </Card.Text>

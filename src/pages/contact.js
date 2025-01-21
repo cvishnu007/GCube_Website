@@ -14,7 +14,7 @@ const Contact = () => {
     setShowConfirmation(true);
     setTimeout(() => setShowConfirmation(false), 3000);
     setIsSubmitting(true);
-    const response = await fetch('http://localhost:4000/api/v1/query/register', {
+    const response = await fetch('https://gcube-club-site.onrender.com/query/register', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
