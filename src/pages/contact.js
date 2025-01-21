@@ -21,7 +21,10 @@ const Contact = () => {
       },
       body: JSON.stringify({ name, email, message }),
     });
-
+    setName('');
+    setEmail('');
+    setMessage('');
+    
     if (response.ok) {
 
       // Reset form fields
