@@ -13,7 +13,7 @@ const Contact = () => {
     e.preventDefault();
     setShowConfirmation(true);
     setTimeout(() => setShowConfirmation(false), 3000);
-    setIsSubmitting(true);
+    // setIsSubmitting(true);
     const response = await fetch('https://gcube-club-site.onrender.com/query/register', {
       method: 'POST',
       headers: {
@@ -29,9 +29,9 @@ const Contact = () => {
       setEmail('');
       setMessage('');
     } else {
-      alert('Failed to send message.');
+      // alert('Failed to send message.');
     }
-    setIsSubmitting(false);
+    // setIsSubmitting(false);
   };
 
   return (
