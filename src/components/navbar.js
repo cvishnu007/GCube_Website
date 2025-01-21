@@ -67,7 +67,8 @@ const NavigationBar = ({ username }) => {
             /> */}
             G
           </Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Toggle aria-controls="basic-navbar-nav" style={{ borderColor: 'rgba(255, 255, 255, 0.42)' }}   />
+          
           <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
             <Nav className="d-flex align-items-center">
               <Nav.Link as={Link} to="/" className="nav-link mx-3" style={iconStyle}>

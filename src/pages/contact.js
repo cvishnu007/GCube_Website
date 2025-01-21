@@ -1,8 +1,33 @@
-import React from 'react';
-import { Container, Row, Col, Card, Button } from 'react-bootstrap';
+import {React,useState} from 'react';
+import { Container, Row, Col, Image, Card, Button } from 'react-bootstrap';
 import NavigationBar from '../components/navbar';
 
 const Contact = () => {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const response = await fetch('http://localhost:4000/api/v1/query/register', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ name, email, message }),
+    });
+
+    if (response.ok) {
+      alert('Message sent successfully!');
+      // Reset form fields
+      setName('');
+      setEmail('');
+      setMessage('');
+    } else {
+      alert('Failed to send message.');
+    }
+  };
+
   return (
     <div style={{ minHeight: '100vh', backgroundColor: '#1a1d23' }}>
       <div style={{ position: 'sticky', top: 0, zIndex: 100 }}>
@@ -34,22 +59,24 @@ const Contact = () => {
         </Row>
         <Row className="justify-content-center mt-5">
           <Col md={8}>
-            {/* Contact Form */}
             <Card className="contact-form-card" style={{ backgroundColor: '#2a2e35', border: 'none' }}>
               <Card.Body>
                 <Card.Title style={{color: 'rgb(189, 38, 111)', fontSize: '1.5rem', fontFamily:'Oswald', fontWeight:'Bold'}}>Get in Touch</Card.Title>
-                <form>
+                <form onSubmit={handleSubmit}>
                   <div className="mb-3">
                     <label className="form-label text-white">Name:</label>
-                    <input type="text" className="form-control" style={{ backgroundColor: '#333', color: '#fff' }} />
+                    <input type="text" className="form-control" style={{ backgroundColor: '#333', color: '#fff' }} 
+                      value={name} onChange={(e) => setName(e.target.value)} />
                   </div>
                   <div className="mb-3">
                     <label className="form-label text-white">Email:</label>
-                    <input type="email" className="form-control" style={{ backgroundColor: '#333', color: '#fff' }} />
+                    <input type="email" className="form-control" style={{ backgroundColor: '#333', color: '#fff' }} 
+                      value={email} onChange={(e) => setEmail(e.target.value)} />
                   </div>
                   <div className="mb-3">
                     <label className="form-label text-white">Message:</label>
-                    <textarea className="form-control" rows="5" style={{ backgroundColor: '#333', color: '#fff' }}></textarea>
+                    <textarea className="form-control" rows="5" style={{ backgroundColor: '#333', color: '#fff' }} 
+                      value={message} onChange={(e) => setMessage(e.target.value)}></textarea>
                   </div>
                   <Button
                     variant="outline-secondary"
@@ -64,6 +91,7 @@ const Contact = () => {
                       fontSize: '1rem',
                     }}
                     className='icon2'
+                    type="submit"
                   >
                     Send
                   </Button>

@@ -5,6 +5,7 @@ import textImage from '../assets/img2.jpeg';
 import backgroundImage from '../assets/3.jpeg';
 import FAQs from '../components/FAQ';
 import Carousel from '../components/carousel';
+import './home2media.css';
 
 const Home2 = () => {
   const [fadeIn, setFadeIn] = useState(false);
@@ -88,7 +89,7 @@ const Home2 = () => {
 
   return (
     <div style={{ 
-      height: '380vh', 
+      height: '390vh', 
       backgroundImage: `url(${backgroundImage})`, // Set the background image
       backgroundSize: 'cover', // Ensure the background covers the entire container
       backgroundPosition: 'center', // Center the background image
@@ -123,13 +124,8 @@ const Home2 = () => {
               textShadow: '0 0 10px rgba(0, 0, 0, 0.5)',
               opacity: fadeIn ? 1 : 0,
               transition: 'opacity 1s ease-in-out',
-              '@media (max-width: 767px)': {
-                fontSize: '8vw',
-              },
-              '@media (min-width: 768px) and (max-width: 1199px)': {
-                fontSize: '9vw',
-              },
             }}
+            className='home-header1'
           >
             GCUBE
           </h1>
@@ -143,13 +139,8 @@ const Home2 = () => {
               transition: 'opacity 1s ease-in-out',
               color: 'rgb(44, 211, 211)',
               marginTop: '0px',
-              '@media (max-width: 767px)': {
-                fontSize: '1.5vw',
-              },
-              '@media (min-width: 768px) and (max-width: 1199px)': {
-                fontSize: '1.8vw',
-              },
             }}
+            className='sub-header1'
           >
             Get. Game. Going.
           </p>
@@ -220,7 +211,7 @@ const Home2 = () => {
     <p
       style={{
         fontFamily: 'Arial',
-        fontSize: '1.5vw',
+        // fontSize: '1.5vw',
         fontWeight: 'lighter',
         color: 'whitesmoke',
         '@media (max-width: 767px)': {
@@ -230,6 +221,7 @@ const Home2 = () => {
           fontSize: '1.2vw',
         },
       }}
+      className='txt1'
     >
       <em1>G³</em1> is a community-driven club dedicated to bringing together passionate game developers and artists. We aim to foster creativity, collaboration, and skill development by providing a platform for members to explore all facets of game creation. Through hands-on projects, game jams, and industry engagement, <em1>G³</em1>  empowers its members to grow, connect, and turn their ideas into reality.
     </p>
@@ -276,6 +268,7 @@ const Home2 = () => {
         fontSize: '3.5vw',
       },
     }}
+    className='txt2'
   >
     {/* <em1>Who Are We Looking For?</em1> */}
     Who Are We Looking For?
@@ -344,6 +337,7 @@ const Home2 = () => {
         fontSize: '3.5vw',
       },
     }}
+    className='txt2'
     // className='icon2'
   >
     {/* <em1>FAQs</em1> */}

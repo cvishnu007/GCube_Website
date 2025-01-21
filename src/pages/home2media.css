@@ -1,0 +1,69 @@
+/* Media queries for Home2 component */
+
+/* For screens with a maximum width of 767px (small devices like mobile phones) */
+@media (max-width: 767px) {
+    .home-header1 {
+      font-size: 14vw !important;
+    }
+    .sub-header1{
+        font-size: 4vw !important;
+    }
+    /*
+    div[style*="text-align: center;"] h1 {
+      font-size: 8vw !important;
+    }
+  
+    div[style*="text-align: center;"] p {
+      font-size: 1.5vw !important;
+    }
+  
+    div[style*="position: relative;"] img {
+      width: 100% !important;
+    }
+  
+    div[style*="position: relative;"] h2 {
+      font-size: 3.5vw !important;
+    }
+  
+    div[style*="position: relative;"] p {
+      font-size: 1vw !important;
+    } */
+    .txt1{
+        font-size: 2.5vw ;
+        font-weight: bolder;
+    }
+    .txt2{
+        font-size: 7vw !important;
+    }
+  }
+  
+  /* For screens between 768px and 1199px (medium devices like tablets) */
+  @media (min-width: 768px) and (max-width: 1199px) {
+    .home-header1 {
+      font-size: 10vw !important;
+    }
+  
+    div[style*="text-align: center;"] h1 {
+      font-size: 9vw !important;
+    }
+  
+    div[style*="text-align: center;"] p {
+      font-size: 2.5vw !important;
+    }
+  
+    div[style*="position: relative;"] img {
+      width: 50% !important;
+    }
+  
+    div[style*="position: relative;"] h2 {
+      font-size: 4vw !important;
+    }
+  
+    div[style*="position: relative;"] p {
+      font-size: 1.2vw !important;
+    }
+    .txt1{
+        font-size: 1.5vw ;
+    }
+  }
+  

@@ -4,16 +4,20 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 const FAQ = () => {
   const faqs = [
     {
-      question: 'What is React?',
-      answer: 'React is a JavaScript library for building user interfaces, particularly single-page applications where data can change over time without reloading the page.'
+      question: 'What opportunities does G³ provide for learning and skill development?',
+      answer: 'G³ offers a wide range of opportunities to enhance your game development skills, including interactive workshops, tutorials, and skill challenges. These events focus on essential aspects such as game design, programming, art, and storytelling. Members also benefit from guidance and mentorship provided by peers, industry professionals, and experienced mentors.'
     },
     {
-      question: 'How do I install Bootstrap in a React project?',
-      answer: 'You can install Bootstrap in a React project by running `npm install bootstrap` and then importing the Bootstrap CSS file in your component or main entry file.'
+      question: 'How can I collaborate with others through G³?',
+      answer: 'G³ is a creative hub where coders, artists, designers, writers, and voice actors come together to collaborate on team projects. Members can participate in game jams, large collaborative projects, or join showcases to work alongside like-minded individuals. These collaborations provide real-world experience and help build strong professional portfolios.'
     },
     {
-      question: 'What is an accordion?',
-      answer: 'An accordion is a collapsible component that allows you to hide and show content in a compact manner. It is commonly used in FAQs to display questions and answers.'
+      question: 'How does G³ help with portfolio enhancement and industry connections?',
+      answer: 'By participating in large collaborative projects, game jams, and showcases, members gain real-world experience and create high-quality work for their portfolios. G³ also connects members with industry professionals and mentors through guest lectures, networking events, and one-on-one guidance, helping them establish valuable industry relationships.',
+    },
+    {
+      question: 'How does G³ support personal projects and individual growth?',
+      answer: 'G³ offers community support for personal projects by providing constructive feedback, mentorship, and resources tailored to your needs. Members can also seek inspiration and motivation by participating in competitions, game jams, and interactive sessions. The goal is to nurture creativity, innovation, and individual growth while fostering a supportive community.'
     }
   ];
 
