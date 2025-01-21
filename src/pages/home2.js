@@ -163,7 +163,7 @@ const Home2 = () => {
   style={{
     position: 'relative',
     // top: '110%',
-    marginTop: '5px',
+    marginTop: '2rem',
     height: 'auto', // Adjust height as needed
     width: '100%',
     display: 'flex',
@@ -199,13 +199,13 @@ const Home2 = () => {
       },
     }}
   />
-  <div style={{ width: '60%', marginLeft: '20px' }}>
+  <div style={{ width: '60%', marginLeft: '2rem' }}>
     <h2
       style={{
         fontFamily: 'Oswald',
         fontSize: '4.8vw',
         fontWeight: 'bolder',
-        marginBottom: '10px',
+        marginBottom: '1rem',
         color: 'rgb(44, 211, 211)',
         '@media (max-width: 767px)': {
           fontSize: '3.5vw',
@@ -219,7 +219,7 @@ const Home2 = () => {
     </h2>
     <p
       style={{
-        fontFamily: 'Domine',
+        fontFamily: 'Arial',
         fontSize: '1.5vw',
         fontWeight: 'lighter',
         color: 'whitesmoke',

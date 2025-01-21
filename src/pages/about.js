@@ -1,6 +1,7 @@
 import React from 'react';
 import { Container, Row, Col, Image, Card } from 'react-bootstrap';
 import NavigationBar from '../components/navbar';
+import dhruv from '../assets/DHRUV.jpeg';
 import './about.css'
 
 const About = () => {
@@ -48,11 +49,11 @@ const About = () => {
                 <Card className="team-member-card" style={{ backgroundColor: '#2a2e35', border: 'none' }}>
                   <Row className="g-0">
                     <Col md={4}>
-                      <Image src="https://picsum.photos/200/300" alt="Team Member 1" fluid className="rounded-start" />
+                      <Image src={dhruv} alt="Team Member 1" fluid className="rounded-start"/>
                     </Col>
                     <Col md={8}>
                       <Card.Body>
-                        <Card.Title style={{color: 'rgb(189, 38, 111)', fontSize: '1.5rem'}}>John Doe</Card.Title>
+                        <Card.Title style={{color: 'rgb(189, 38, 111)', fontSize: '1.5rem'}}>Dhruv Jain</Card.Title>
                         <Card.Text className="text-white">
                           Game Developer with expertise in Unity and C#. Passionate about creating immersive gameplay experiences.
                         </Card.Text>

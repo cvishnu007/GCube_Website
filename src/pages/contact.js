@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Row, Col, Image, Card, Button } from 'react-bootstrap';
+import { Container, Row, Col, Card, Button } from 'react-bootstrap';
 import NavigationBar from '../components/navbar';
 
 const Contact = () => {
@@ -28,7 +28,7 @@ const Contact = () => {
               If you're interested in learning more about our projects, or if you'd like to collaborate with us, please don't hesitate to reach out. We're always looking for like-minded individuals to join our community.
             </p>
             <p className="text-white">
-              You can contact us through the form below, or by sending an email to <a href="mailto:contact@gcube.com" className="blue1">contact@gcube.com</a>.
+              You can contact us through the form below, or by sending an email to <a href="mailto:gcube@pes.edu" className="blue1">gcube@pes.edu</a>.
             </p>
           </Col>
         </Row>
