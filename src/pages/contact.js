@@ -11,6 +11,8 @@ const Contact = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setShowConfirmation(true);
+    setTimeout(() => setShowConfirmation(false), 3000);
     setIsSubmitting(true);
     const response = await fetch('http://localhost:4000/api/v1/query/register', {
       method: 'POST',
@@ -22,8 +24,6 @@ const Contact = () => {
 
     if (response.ok) {
       // Show confirmation animation
-      setShowConfirmation(true);
-      setTimeout(() => setShowConfirmation(false), 3000);
 
       // Reset form fields
       setName('');
