@@ -2,7 +2,7 @@ import React, {useEffect} from 'react';
 import { useLocation } from 'react-router-dom';
 import { Navbar, Nav, Container, Dropdown } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
-import { House, Compass, Search, BookmarkHeart, InfoCircle, PersonCircle, Boxes } from 'react-bootstrap-icons';
+import { House, Compass, Search, BookmarkHeart, InfoCircle, PersonCircle, Envelope, Controller} from 'react-bootstrap-icons';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const NavigationBar = ({ username }) => {
@@ -71,17 +71,18 @@ const NavigationBar = ({ username }) => {
           
           <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
             <Nav className="d-flex align-items-center">
-              <Nav.Link as={Link} to="/" className="nav-link mx-3" style={iconStyle}>
-                <House className=" nav-icon" />
+              <Nav.Link as={Link} to="/" className="nav-link mx-3 " style={iconStyle} title='Home'>
+                <House className=" nav-icon"/>
               </Nav.Link>
-              <Nav.Link as={Link} to="/about" className="nav-link mx-3" style={iconStyle}>
+              <Nav.Link as={Link} to="/about" className="nav-link mx-3" style={iconStyle} title='About Us'>
                 <InfoCircle className="nav-icon" />
               </Nav.Link>
-              <Nav.Link as={Link} to="/games" className="nav-link mx-3" style={{ fontSize: '24px' }}>
-              👾
+              <Nav.Link as={Link} to="/games" className="nav-link mx-3" style={{ fontSize: '24px' }} title='Games'>
+              {/* 👾 */}
+              <Controller className="nav-icon" />
               </Nav.Link>
-              <Nav.Link as={Link} to="/contact" className="nav-link mx-3" style={iconStyle}>
-                <Search className="nav-icon" />
+              <Nav.Link as={Link} to="/contact" className="nav-link mx-3" style={iconStyle} title='Contact Us'>
+                <Envelope className="nav-icon" />
               </Nav.Link>
               {/* <Dropdown align="end" className="mx-3">
                 <Dropdown.Toggle
