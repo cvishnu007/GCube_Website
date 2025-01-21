@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import NavigationBar from '../components/navbar';
 import backgroundImage from '../assets/3.jpeg';
+import image1 from '../assets/COD-Microwarfare.png';
+import image2 from '../assets/MINIHEIST.jpg';
 
 const Games = () => {
   // Data for the cards
@@ -19,15 +21,15 @@ const Games = () => {
     {
       id: 1,
       title: 'COD: Microwarfare',
-      description: 'This game was made for the 24 hour DeltaTime 2024 game jam organised by the PARALLAX club in PES University ,EC campus. The theme was "Too Much of a Good Thing".Our interpretation of it was too much of being immune(good thing) to a kind of virus makes you vulnerable(bad thing) to another.',
-      image: 'https://picsum.photos/200/150',
+      description: 'This game was made for the 24 hour DeltaTime 2024 game jam organised by the PARALLAX club in PES University ,EC campus. The theme was "Too Much of a Good Thing". Our interpretation of it was too much of being immune(good thing) to a kind of virus makes you vulnerable(bad thing) to another.',
+      image: image1,
       link:'https://minedude918.itch.io/codmicrowarfare',
     },
     {
       id: 2,
       title: 'Mini Heist',
-      description: 'This game was made for the GMTK Game Jam 2024 game jam hosted on  itch. The  theme was "Build to Scale". Our interpretation of it was you can scale anything in the game from characters, bank vaults( ; ) ) to even yourself!!',
-      image: 'https://picsum.photos/200/150',
+      description: 'This game was made for the GMTK Game Jam 2024 game jam hosted on  itch. The  theme was "Build to Scale". Our interpretation of it was you can scale anything in the game from characters, bank vaults; to even yourself!!',
+      image: image2,
       link:'https://dreadnexus.itch.io/miniheist',
     },
   ];
