@@ -127,7 +127,7 @@ const Home2 = () => {
             }}
             className='home-header1'
           >
-            GCUBE
+            <em>GCUBE</em>
           </h1>
           <p
             style={{

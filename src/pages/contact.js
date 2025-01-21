@@ -23,7 +23,6 @@ const Contact = () => {
     });
 
     if (response.ok) {
-      // Show confirmation animation
 
       // Reset form fields
       setName('');

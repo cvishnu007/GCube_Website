@@ -49,7 +49,7 @@ const Footer = () => {
               <a href="https://www.instagram.com/g_cube.pesu?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target='_blank' className="text-light me-3 icon">
                 <Instagram size={24} /> 
               </a>
-              <a href="#" className="text-light me-3 icon">
+              <a href="https://discord.gg/NnPZZHcU" className="text-light me-3 icon" target='_blank'>
                 <Discord size={24} /> 
               </a>
               {/* <a href="#" className="text-light me-3 icon">

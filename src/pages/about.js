@@ -1,8 +1,10 @@
 import React from 'react';
 import { Container, Row, Col, Image, Card } from 'react-bootstrap';
+import { Linkedin, Instagram } from 'react-bootstrap-icons';
 import NavigationBar from '../components/navbar';
 import dhruv from '../assets/DHRUV.jpeg';
-import './about.css'
+import vajra from '../assets/VAJRA.jpeg';
+import './about.css';
 
 const About = () => {
   return (
@@ -13,7 +15,7 @@ const About = () => {
       <Container fluid className="py-5">
         <Row className="justify-content-center">
           <Col md={6} className="text-center">
-            <h1 className="display-4 "
+            <h1 className="display-4"
               style={{
                 fontFamily: 'Oswald',
                 color: 'rgb(44, 211, 211)',
@@ -21,42 +23,44 @@ const About = () => {
                 fontSize: '4rem',
                 textShadow: '0 0 10px black',
                 marginBottom: '2rem'
-              }}><div>Welcome to <em1>GCUBE</em1></div>
-              <div style={{fontSize: '3rem',}}>The Game Development Club of PES</div></h1> 
-            {/* <p className="lead text-white">Welcome to <em1>GCUBE</em1>, the Game Development Club of PES.</p> */}
+              }}>
+              <div>Welcome to <em1>GCUBE</em1></div>
+              <div style={{ fontSize: '3rem' }}>The Game Development Club of PES</div>
+            </h1>
           </Col>
         </Row>
         <Row className="justify-content-center">
           <Col md={8}>
-          <p className='text-white'>
-          At <em1>G³</em1>, we believe in the power of collaboration and creativity to shape the future of game development. Our mission is to unite passionate developers, designers, and artists in a supportive community where they can hone their skills, share ideas, and build innovative games together.
-          </p>
-            {/* <p className="text-white">
-              <em1>GCUBE</em1> is a community of passionate game developers, designers, and artists who come together to create innovative and engaging games. Our mission is to provide a platform for like-minded individuals to collaborate, learn, and grow in the field of game development.
+            <p className='text-white'>
+              At <em1>G³</em1>, we believe in the power of collaboration and creativity to shape the future of game development. 
+              Our mission is to unite passionate developers, designers, and artists in a supportive community where they can hone their skills, 
+              share ideas, and build innovative games together.
             </p>
-            <p className="text-white">
-              We believe that game development is not just about creating games, but about telling stories, evoking emotions, and bringing people together. Our team is dedicated to creating games that are not only fun and challenging but also thought-provoking and visually stunning.
-            </p> */}
           </Col>
         </Row>
         <Row className="justify-content-center mt-5">
           <Col md={8}>
-            {/* Team Members Section */}
-            <h2 className="mb-4" style={{color: 'rgb(44, 211, 211)', fontWeight:'Bolder'}}>Our Team</h2>
+            <h2 className="mb-4" style={{ color: 'rgb(44, 211, 211)', fontWeight: 'bolder' }}>The Club Heads</h2>
             <Row className="g-4">
               {/* Team Member 1 */}
               <Col md={6}>
                 <Card className="team-member-card" style={{ backgroundColor: '#2a2e35', border: 'none' }}>
                   <Row className="g-0">
                     <Col md={4}>
-                      <Image src={dhruv} alt="Team Member 1" fluid className="rounded-start"/>
+                      <Image src={dhruv} alt="Team Member 1" fluid className="rounded-start" style={{objectFit: 'cover', height: '100%'}}/>
                     </Col>
                     <Col md={8}>
                       <Card.Body>
-                        <Card.Title style={{color: 'rgb(189, 38, 111)', fontSize: '1.5rem'}}>Dhruv Jain</Card.Title>
+                        <Card.Title style={{ color: 'rgb(189, 38, 111)', fontSize: '1.5rem' }}>Dhruv Jain</Card.Title>
                         <Card.Text className="text-white">
-                          Game Developer with expertise in Unity and C#. Passionate about creating immersive gameplay experiences.
+                          Game Developer with expertise in Unreal Engine, Blender and C++. Passionate about creating immersive gameplay experiences.
                         </Card.Text>
+                        <a href="https://www.linkedin.com/in/d16r7v-17a8n/" target='_blank' className="text-light me-3 icon">
+                          <Linkedin size={24} />
+                        </a>
+                        <a href="https://www.instagram.com/dhruvj_1705?igsh=YXVmMTR2ODM4cmxi" target='_blank' className="text-light me-3 icon">
+                          <Instagram size={24} /> 
+                        </a>
                       </Card.Body>
                     </Col>
                   </Row>
@@ -67,74 +71,43 @@ const About = () => {
                 <Card className="team-member-card" style={{ backgroundColor: '#2a2e35', border: 'none' }}>
                   <Row className="g-0">
                     <Col md={4}>
-                      <Image src="https://picsum.photos/200/301" alt="Team Member 2" fluid className="rounded-start" />
+                      <Image src={vajra} alt="Team Member 2" fluid className="rounded-start" />
                     </Col>
                     <Col md={8}>
                       <Card.Body>
-                        <Card.Title style={{color: 'rgb(189, 38, 111)', fontSize: '1.5rem'}}>Jane Doe</Card.Title>
+                        <Card.Title style={{ color: 'rgb(189, 38, 111)', fontSize: '1.5rem', fontWeight: 'bold' }}>Vajra DindaKurthi</Card.Title>
                         <Card.Text className="text-white">
-                          Game Designer specializing in level design and storytelling. Loves crafting engaging narratives.
+                            Programmer with a passion for Mathematical Designs in games . Enjoys solving complex puzzles
                         </Card.Text>
-                      </Card.Body>
-                    </Col>
-                  </Row>
-                </Card>
-              </Col>
-              {/* Team Member 3 */}
-              <Col md={6}>
-                <Card className="team-member-card" style={{ backgroundColor: '#2a2e35', border: 'none' }}>
-                  <Row className="g-0">
-                    <Col md={4}>
-                      <Image src="https://picsum.photos/200/302" alt="Team Member 3" fluid className="rounded-start" />
-                    </Col>
-                    <Col md={8}>
-                      <Card.Body>
-                        <Card.Title style={{color: 'rgb(189, 38, 111)', fontSize: '1.5rem'}}>Bob Smith</Card.Title>
-                        <Card.Text className="text-white">
-                          Artist with a focus on 3D modeling and animation. Brings characters and worlds to life.
-                        </Card.Text>
-                      </Card.Body>
-                    </Col>
-                  </Row>
-                </Card>
-              </Col>
-              {/* Team Member 4 */}
-              <Col md={6}>
-                <Card className="team-member-card" style={{ backgroundColor: '#2a2e35', border: 'none' }}>
-                  <Row className="g-0">
-                    <Col md={4}>
-                      <Image src="https://picsum.photos/200/303" alt="Team Member 4" fluid className="rounded-start" />
-                    </Col>
-                    <Col md={8}>
-                      <Card.Body>
-                        <Card.Title style={{color: 'rgb(189, 38, 111)', fontSize: '1.5rem'}}>Alice Johnson</Card.Title>
-                        <Card.Text className="text-white">
-                          Programmer with a passion for AI and machine learning in games. Enjoys solving complex problems.
-                        </Card.Text>
-                      </Card.Body>
-                    </Col>
-                  </Row>
-                </Card>
-              </Col>
-              {/* Team Member 5 */}
-              <Col md={6}>
-                <Card className="team-member-card" style={{ backgroundColor: '#2a2e35', border: 'none' }}>
-                  <Row className="g-0">
-                    <Col md={4}>
-                      <Image src="https://picsum.photos/200/304" alt="Team Member 5" fluid className="rounded-start" />
-                    </Col>
-                    <Col md={8}>
-                      <Card.Body>
-                        <Card.Title style={{color: 'rgb(189, 38, 111)', fontSize: '1.5rem'}}>Charlie Brown</Card.Title>
-                        <Card.Text className="text-white">
-                          Sound Designer focused on creating immersive audio experiences. Loves experimenting with soundscapes.
-                        </Card.Text>
+                        <a href="https://www.linkedin.com/in/vajra-dindakurthi-a276ba313?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target='_blank' className="text-light me-3 icon">
+                          <Linkedin size={24} /> 
+                        </a>
+                        <a href="https://www.instagram.com/vajra._d?utm_source=qr&igsh=MTdtYWFqbHBhamYzdw==" target='_blank' className="text-light me-3 icon">
+                          <Instagram size={24} /> 
+                        </a>
+
                       </Card.Body>
                     </Col>
                   </Row>
                 </Card>
               </Col>
             </Row>
+          </Col>
+        </Row>
+        {/* Future Prospect Section */}
+        <Row className="justify-content-center mt-5">
+          <Col md={8}>
+            <h2 className="mb-4" style={{ color: 'rgb(44, 211, 211)', fontWeight: 'bolder' }}>Future Prospect</h2>
+            <Card className="future-prospect-card" style={{ backgroundColor: '#2a2e35', border: 'none', padding: '20px' }}>
+              <Card.Body>
+                <Card.Text className="text-white" style={{ fontSize: '1.2rem', lineHeight: '1.8', fontWeight: 'bold' }}>
+                  <em1>G³</em1> envisions a future where we take bold steps toward self-publishing our games, showcasing the creativity and skill of our members. 
+                  While we remain open to partnerships with publishers, our primary goal is to highlight our work independently and establish a unique 
+                  voice in the industry. We aspire to represent our college at leading national and international events, sharing our passion, innovation, 
+                  and talent with the broader gaming community and beyond.
+                </Card.Text>
+              </Card.Body>
+            </Card>
           </Col>
         </Row>
       </Container>
