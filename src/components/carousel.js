@@ -59,8 +59,8 @@ const Home2 = () => {
       buttonText: 'Join Now',
     },
     {
-      title: 'Content',
-      content: 'Plan and implement promotional campaigns to generate buzz, engage potential participants, and drive event attendance.',
+      title: 'PR & Content',
+      content: 'Develop and manage public relations strategies and create compelling content to effectively communicate event details and engage the target audience',
       image: 'https://images.pexels.com/photos/3379934/pexels-photo-3379934.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
       buttonText: 'Join Now',
     },
@@ -72,7 +72,7 @@ const Home2 = () => {
     },
     {
       title: 'Campainging',
-      content: 'Develop a PR strategy and create engaging content for a PR campaign, focus on event details and audience engagement to drive excitement and action.',
+      content: 'Create engaging content for a PR campaign, focus on event details and audience engagement to drive excitement and action.',
       image: 'https://images.pexels.com/photos/5638273/pexels-photo-5638273.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
       buttonText: 'Join Now',
     },
