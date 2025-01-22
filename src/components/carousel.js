@@ -53,9 +53,9 @@ const Home2 = () => {
       buttonText: 'Join Now',
     },
     {
-      title: 'PR',
-      content: `Develop a PR strategy to communicate event details, targeting key audiences and utilizing media channels for maximum exposure.`,
-      image: 'https://images.pexels.com/photos/3183170/pexels-photo-3183170.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+      title: 'Social Media',
+      content: `From trending posts to viral campaigns, we master the art of social media. Experience content creation at its finest—engaging, creative, and impactful!`,
+      image: 'https://images.pexels.com/photos/196655/pexels-photo-196655.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
       buttonText: 'Join Now',
     },
     {
@@ -72,10 +72,11 @@ const Home2 = () => {
     },
     {
       title: 'Campainging',
-      content: 'Create engaging content for a PR campaign, focus on event details and audience engagement to drive excitement and action.',
+      content: 'Develop a PR strategy and create engaging content for a PR campaign, focus on event details and audience engagement to drive excitement and action.',
       image: 'https://images.pexels.com/photos/5638273/pexels-photo-5638273.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
       buttonText: 'Join Now',
     },
+
   ];
 
   const [cardsPerSlide, setCardsPerSlide] = useState(3);
