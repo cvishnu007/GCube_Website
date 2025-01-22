@@ -8,6 +8,9 @@
     .sub-header1{
         font-size: 4vw !important;
     }
+    .mainSiteHeight{
+      height: 430vh !important;
+    }
     /*
     div[style*="text-align: center;"] h1 {
       font-size: 8vw !important;

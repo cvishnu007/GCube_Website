@@ -89,12 +89,14 @@ const Home2 = () => {
 
   return (
     <div style={{ 
-      height: '390vh', 
+      height: '380vh', 
       backgroundImage: `url(${backgroundImage})`, // Set the background image
       backgroundSize: 'cover', // Ensure the background covers the entire container
       backgroundPosition: 'center', // Center the background image
       backgroundRepeat: 'repeat-y' // Prevent the background from repeating
-    }}> {/* Extend the main site page height */}
+    }}
+    className='mainSiteHeight'
+    > {/* Extend the main site page height */}
       <div style={{ position: 'sticky', top: 0, zIndex: 100 }}>
         <NavigationBar username="JohnDoe" />
       </div>
@@ -348,6 +350,7 @@ const Home2 = () => {
 </div>
         </div>
       </div>
+
     </div>
   );
 };
