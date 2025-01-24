@@ -1,79 +1,104 @@
 import React, { useState, useEffect } from 'react';
 import { Carousel, Card, Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import hospitality from '../assets/carousel/Hospitality-carousel.jpeg'
+import VE from '../assets/carousel/video-carousel.jpeg'
+import market from '../assets/carousel/Marketing-carousel.webp'
+import sponsor from '../assets/carousel/Sponsor-carousel.webp'
+import EVM from '../assets/carousel/EVM-carousel.jpeg'
+import Ops from '../assets/carousel/Operations-carousel.webp'
+import logs from '../assets/carousel/Logs-carousel.jpeg'
+import design from '../assets/carousel/Design-carousel.webp'
+import social from '../assets/carousel/social-carousel.webp'
+import PR from '../assets/carousel/content-carousel.webp'
+import Tech from '../assets/carousel/Tech-carousel.webp'
+import Camp from '../assets/carousel/campaign-carousel.jpeg'
+
 
 const Home2 = () => {
   const cards = [
     {
       title: 'Hospitality',
       content: 'Hospitality is the act of making people feel welcome, valued, and comfortable by providing friendly and attentive service.',
-      image: 'https://images.pexels.com/photos/5638273/pexels-photo-5638273.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+      // image: 'https://images.pexels.com/photos/5638273/pexels-photo-5638273.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+      image:hospitality,
       buttonText: 'Join Now',
     },
     {
       title: 'Video Editing',
       content: 'Edit and produce high-quality videos to capture event highlights, promotional content, and other multimedia materials for marketing and post-event use.',
-      image: 'https://images.pexels.com/photos/257904/pexels-photo-257904.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+      // image: 'https://images.pexels.com/photos/257904/pexels-photo-257904.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+      image: VE,
       buttonText: 'Join Now',
     },
     {
       title: 'Marketing',
       content: 'Plan and execute marketing strategies to promote the event, utilizing various channels to reach and attract the desired audience.',
-      image: 'https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+      // image: 'https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+      image: market,
       buttonText: 'Join Now',
     },
     {
       title: 'Sponsorship',
       content: 'Identify potential sponsors, negotiate partnerships, and manage relationships to secure funding and support for the event.',
-      image: 'https://images.pexels.com/photos/3184416/pexels-photo-3184416.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+      // image: 'https://images.pexels.com/photos/3184416/pexels-photo-3184416.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+      image: sponsor,
       buttonText: 'Join Now',
     },
     {
       title: 'Event Management',
       content: 'Plan, manage, and execute events seamlessly.This role calls for excellent communication, efficient organization, and strong problem-solving skills.',
-      image: 'https://images.pexels.com/photos/30324916/pexels-photo-30324916/free-photo-of-crowded-convention-center-gathering-event.jpeg?auto=compress&cs=tinysrgb&w=800',
+      // image: 'https://images.pexels.com/photos/30324916/pexels-photo-30324916/free-photo-of-crowded-convention-center-gathering-event.jpeg?auto=compress&cs=tinysrgb&w=800',
+      image: EVM,
       buttonText: 'Join Now',
     },
     {
       title: 'Operations',
       content: 'Coordinate event schedules, book venues, and obtain necessary permissions and approvals from relevant authorities for successful execution.',
-      image: 'https://images.pexels.com/photos/3760067/pexels-photo-3760067.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+      // image: 'https://images.pexels.com/photos/3760067/pexels-photo-3760067.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+      image: Ops,
       buttonText: 'Join Now',
     },
     {
       title: 'Logistics',
       content: 'Oversee the transportation, equipment, and supplies needed for the event, ensuring everything is in place and delivered on time for smooth operations.',
-      image: 'https://images.pexels.com/photos/5025489/pexels-photo-5025489.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+      // image: 'https://images.pexels.com/photos/5025489/pexels-photo-5025489.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+      image: logs,
       buttonText: 'Join Now',
     },
     {
       title: 'Design',
       content: `Create visually appealing materials, including graphics, layouts, and promotional content, to enhance the event's aesthetic and brand identity.`,
-      image: 'https://images.pexels.com/photos/5428724/pexels-photo-5428724.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+      // image: 'https://images.pexels.com/photos/5428724/pexels-photo-5428724.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+      image: design,
       buttonText: 'Join Now',
     },
     {
       title: 'Social Media',
       content: `From trending posts to viral campaigns, we master the art of social media. Experience content creation at its finest—engaging, creative, and impactful!`,
-      image: 'https://images.pexels.com/photos/196655/pexels-photo-196655.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+      // image: 'https://images.pexels.com/photos/196655/pexels-photo-196655.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+      image: social,
       buttonText: 'Join Now',
     },
     {
       title: 'PR & Content',
       content: 'Develop and manage public relations strategies and create compelling content to effectively communicate event details and engage the target audience',
-      image: 'https://images.pexels.com/photos/3379934/pexels-photo-3379934.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+      // image: 'https://images.pexels.com/photos/3379934/pexels-photo-3379934.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+      image: PR,
       buttonText: 'Join Now',
     },
     {
       title: 'Technical',
       content: `From scratch to Unreal Engine, we cover everything in game development. Dive into coding, design, and innovation—anything and everything, all in one place!`,
-      image: 'https://images.pexels.com/photos/1089438/pexels-photo-1089438.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+      // image: 'https://images.pexels.com/photos/1089438/pexels-photo-1089438.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+      image: Tech,
       buttonText: 'Join Now',
     },
     {
-      title: 'Campainging',
+      title: 'Campaigning',
       content: 'Create engaging content for a PR campaign, focus on event details and audience engagement to drive excitement and action.',
-      image: 'https://images.pexels.com/photos/5935743/pexels-photo-5935743.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+      // image: 'https://images.pexels.com/photos/5935743/pexels-photo-5935743.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+      image: Camp,
       buttonText: 'Join Now',
     },
 
@@ -159,6 +184,7 @@ const Home2 = () => {
                     <Card.Img
                       variant="top"
                       src={card.image}
+                      alt='Image Loading'
                       className="img-fluid carousel-media"
                     />
                     <Card.Body>
