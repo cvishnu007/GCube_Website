@@ -11,6 +11,7 @@ const Contact = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsSubmitting(true);
     const response = await fetch('https://gcube-club-site.onrender.com/api/v1/query/register/', {
       method: 'POST',
       headers: {
@@ -27,7 +28,6 @@ const Contact = () => {
       setMessage('');
       setShowConfirmation(true);
       setTimeout(() => setShowConfirmation(false), 3000);
-      setIsSubmitting(true);
     } else {
       // alert('Failed to send message.');
     }
