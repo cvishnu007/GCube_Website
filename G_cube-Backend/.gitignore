@@ -1,5 +1,4 @@
-.prettierignore
-.prettierrc
+.env
 
 # Logs
 logs
