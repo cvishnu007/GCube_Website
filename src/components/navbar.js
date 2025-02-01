@@ -49,6 +49,7 @@ const NavigationBar = ({ username }) => {
     display: 'flex',
     alignItems: 'center',
     fontSize: '1.5rem', // Increase font size
+    textDecoration: 'none'
   };
 
   return (
