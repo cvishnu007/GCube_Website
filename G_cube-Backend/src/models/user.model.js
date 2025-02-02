@@ -4,26 +4,45 @@ const userSchema = new Schema({
     username:{
         type:String,
         trim:true,
-        index:true
+        index:true,
+        required:true
     },
     email:{
         type:String,
         trim:true,
+        required:true,
         index:true,
         unique:true
     },
     srn:{
         type:String,
         index:true,
+        required:true,
         unique:true,
-        trim:true
+        trim:true,
+        lowercase:true
     },
     answer:[
         {
             type:Schema.Types.ObjectId,
             ref:"Answer"
         }
-    ]
+    ],
+    branch:{
+        type:String,
+        required:true,
+        trim:true,
+        index:true
+    },
+    semester:{
+        type:Number,        
+        required:true,
+    },
+    contactNo:{
+        type:Number,
+        required:true,
+        unique:true
+    }
 },{
     timestamps:true
 })
