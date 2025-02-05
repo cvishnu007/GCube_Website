@@ -1,7 +1,7 @@
 import mongoose, {Schema} from "mongoose";
 
 const answerSchema= new Schema({
-    ans:{
+    answer:{
         type:String,
         required:true,
         trim:true,

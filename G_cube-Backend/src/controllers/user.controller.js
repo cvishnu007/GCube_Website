@@ -32,6 +32,53 @@ const registerUser= asyncHandler(async(req,res)=>{
     .json(new ApiResponse(201,createdUser,"Successful user registration"));
 })
 
+const getUser= asyncHandler(async(req,res)=>{
+    const userId=req.user?._id;
+    if(!userId){
+        return new ApiError(401,"User not authenticated");
+    }
+    const user= await User.findById(userId).select("-answer");      //add or remove fields u want to give to user
+    if(!user){
+        return new ApiError(404,"User not found");
+    }
+    return res.status(202)
+    .json(new ApiResponse(202,user,"User has been fetched."));
+})
+
+const userAnswers= asyncHandler(async(req,res)=>{
+    const userId=req.user?._id;
+    if(!userId){
+        return new ApiError(401,"User not provided");
+    }
+    const answer= await User.aggregate([
+        {
+            $match:{
+                _id:new mongoose.Types.ObjectId(userId)
+            }
+        },{
+            $lookup:{
+                from:"answers",
+                localField:"_id",
+                foreignField:"user",
+                as:"answers"
+            }
+        },{
+            $project:{
+                answers:1,
+                username:1,
+                srn:1
+            }
+        }
+    ])
+    if(!answer?.length){
+        throw new ApiError(400,"User answer not found");
+    }
+    return res.status(201)
+    .json(new ApiResponse(201,answer,"User answer fetched successfully"))
+})
+
 export {
-    registerUser
+    registerUser,
+    getUser,
+    userAnswers
 }
