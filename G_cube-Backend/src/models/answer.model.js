@@ -11,6 +11,12 @@ const answerSchema= new Schema({
         type:Schema.Types.ObjectId,
         ref:"User",
         required:true
+    },
+    question:{
+        type:String,
+        required:true,
+        trim:true,
+        index:true
     }
 })
 
