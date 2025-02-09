@@ -57,6 +57,11 @@
   transform: scaleX(1); /* Scale to full width on hover */
 }
 
+.navbar-toggler-icon {
+  filter: invert(1); /* Converts the dark icon to light */
+}
+
+
 .cube-logo {
   width: 30px;
   height: 30px;
